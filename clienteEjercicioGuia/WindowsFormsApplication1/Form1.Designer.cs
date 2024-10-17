@@ -34,6 +34,8 @@ namespace WindowsFormsApplication1
             this.nombre = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Palindromo = new System.Windows.Forms.RadioButton();
+            this.mayusculas = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.Altura = new System.Windows.Forms.TextBox();
             this.Alto = new System.Windows.Forms.RadioButton();
@@ -41,8 +43,8 @@ namespace WindowsFormsApplication1
             this.Bonito = new System.Windows.Forms.RadioButton();
             this.conectar = new System.Windows.Forms.Button();
             this.desconectar = new System.Windows.Forms.Button();
-            this.mayusculas = new System.Windows.Forms.RadioButton();
-            this.Palindromo = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.contlbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +99,30 @@ namespace WindowsFormsApplication1
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Peticion";
+            // 
+            // Palindromo
+            // 
+            this.Palindromo.AutoSize = true;
+            this.Palindromo.Location = new System.Drawing.Point(155, 226);
+            this.Palindromo.Margin = new System.Windows.Forms.Padding(4);
+            this.Palindromo.Name = "Palindromo";
+            this.Palindromo.Size = new System.Drawing.Size(225, 20);
+            this.Palindromo.TabIndex = 12;
+            this.Palindromo.TabStop = true;
+            this.Palindromo.Text = "Dime si mi nombre el Palindromo";
+            this.Palindromo.UseVisualStyleBackColor = true;
+            // 
+            // mayusculas
+            // 
+            this.mayusculas.AutoSize = true;
+            this.mayusculas.Location = new System.Drawing.Point(155, 254);
+            this.mayusculas.Margin = new System.Windows.Forms.Padding(4);
+            this.mayusculas.Name = "mayusculas";
+            this.mayusculas.Size = new System.Drawing.Size(264, 20);
+            this.mayusculas.TabIndex = 11;
+            this.mayusculas.TabStop = true;
+            this.mayusculas.Text = "Devuelveme mi nombre en mayúsculas\r\n";
+            this.mayusculas.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -175,35 +201,34 @@ namespace WindowsFormsApplication1
             this.desconectar.UseVisualStyleBackColor = true;
             this.desconectar.Click += new System.EventHandler(this.desconectar_Click);
             // 
-            // mayusculas
+            // button1
             // 
-            this.mayusculas.AutoSize = true;
-            this.mayusculas.Location = new System.Drawing.Point(155, 254);
-            this.mayusculas.Margin = new System.Windows.Forms.Padding(4);
-            this.mayusculas.Name = "mayusculas";
-            this.mayusculas.Size = new System.Drawing.Size(330, 25);
-            this.mayusculas.TabIndex = 11;
-            this.mayusculas.TabStop = true;
-            this.mayusculas.Text = "Devuelveme mi nombre en mayúsculas\r\n";
-            this.mayusculas.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(563, 90);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(169, 42);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "¿ Cuantos servicios ?";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Palindromo
+            // contlbl
             // 
-            this.Palindromo.AutoSize = true;
-            this.Palindromo.Location = new System.Drawing.Point(155, 226);
-            this.Palindromo.Margin = new System.Windows.Forms.Padding(4);
-            this.Palindromo.Name = "Palindromo";
-            this.Palindromo.Size = new System.Drawing.Size(281, 25);
-            this.Palindromo.TabIndex = 12;
-            this.Palindromo.TabStop = true;
-            this.Palindromo.Text = "Dime si mi nombre el Palindromo";
-            this.Palindromo.UseVisualStyleBackColor = true;
+            this.contlbl.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.contlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contlbl.Location = new System.Drawing.Point(563, 136);
+            this.contlbl.Name = "contlbl";
+            this.contlbl.Size = new System.Drawing.Size(169, 59);
+            this.contlbl.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 692);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.contlbl);
             this.Controls.Add(this.desconectar);
             this.Controls.Add(this.conectar);
             this.Controls.Add(this.groupBox1);
@@ -232,6 +257,8 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Button desconectar;
         private System.Windows.Forms.RadioButton Palindromo;
         private System.Windows.Forms.RadioButton mayusculas;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label contlbl;
     }
 }
 

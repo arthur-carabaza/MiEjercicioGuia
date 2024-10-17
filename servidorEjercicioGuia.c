@@ -7,6 +7,12 @@
 #include <stdio.h>
 #include <pthread.h>
 
+//Variable para ir contado los servicios realizados
+int contador;
+
+//Estructura necesaria para acceso excluyente
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
 //Definimos estructuras i funciones para trabajar con la lista de conectados
 typedef struct {
 	char nombre[20];
@@ -114,7 +120,7 @@ void* AtenderCliente(void* socket)
 		// Ya tenemos el c?digo de la petici?n
 		char nombre[20];
 
-		if (codigo != 0)
+		if ((codigo != 0)&&(codigo!=6))
 		{
 			p = strtok(NULL, "/");
 
@@ -178,6 +184,10 @@ void* AtenderCliente(void* socket)
 			}
 		}
 
+		else if (codigo == 6) {
+			sprintf(respuesta, "%d", contador);
+		}
+
 		if (codigo != 0)
 		{
 
@@ -185,6 +195,14 @@ void* AtenderCliente(void* socket)
 			// Enviamos respuesta
 			write(sock_conn, respuesta, strlen(respuesta));
 		}
+
+		if ((codigo == 1) || (codigo == 2) || (codigo == 3) || (codigo == 4) || (codigo == 5)) {
+			pthread_mutex_lock( &mutex); //No me interrumpas ahora
+			contador++;
+			pthread_mutex_unlock( &mutex); //Ya puedes interrumpirme
+		}
+
+
 	}
 	// Se acabo el servicio para este cliente
 	close(sock_conn);
@@ -219,12 +237,12 @@ int main(int argc, char *argv[])
 	if (listen(sock_listen, 4) < 0)
 		printf("Error en el Listen");
 
-
+	contador = 0;
 	int i = 0;
 	int sockets[100];
 	pthread_t thread;
 
-	//Bucle infinito
+	//Bucle infinito para no limitar el numero de conexiones y peticiones
 	for (;;) 
 	{
 		printf("Escuchando\n");
