@@ -43,7 +43,6 @@ namespace WindowsFormsApplication1
             this.Bonito = new System.Windows.Forms.RadioButton();
             this.conectar = new System.Windows.Forms.Button();
             this.desconectar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.contlbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -201,17 +200,6 @@ namespace WindowsFormsApplication1
             this.desconectar.UseVisualStyleBackColor = true;
             this.desconectar.Click += new System.EventHandler(this.desconectar_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(563, 90);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 42);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "¿ Cuantos servicios ?";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // contlbl
             // 
             this.contlbl.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -227,7 +215,6 @@ namespace WindowsFormsApplication1
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 692);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.contlbl);
             this.Controls.Add(this.desconectar);
             this.Controls.Add(this.conectar);
@@ -257,7 +244,6 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Button desconectar;
         private System.Windows.Forms.RadioButton Palindromo;
         private System.Windows.Forms.RadioButton mayusculas;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label contlbl;
     }
 }
