@@ -19,6 +19,7 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false; //Necesario para hacer operaciones cross-thread que se supone que son illegales, hay una funcion y todo para desactivarla que guapo
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -113,15 +114,15 @@ namespace WindowsFormsApplication1
                 // Enviamos al servidor el nombre tecleado
                 byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
                 server.Send(msg);
-             }
+            }
             else if (Bonito.Checked)
-                {
+            {
                     // Quiere saber si el nombre es bonito
                     string mensaje = "2/" + nombre.Text;
                     // Enviamos al servidor el nombre tecleado
                     byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
                     server.Send(msg);                 
-             }
+            }
             else if (Alto.Checked)
             {
                     //Quiere saber si es alto
@@ -138,7 +139,6 @@ namespace WindowsFormsApplication1
                 byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
                 server.Send(msg);
             }
-
             else if(mayusculas.Checked)
             {
                 //Quiere devolver su nomber en mayuscula
@@ -146,7 +146,6 @@ namespace WindowsFormsApplication1
                 //Enviamos al servidor el nombre tecleado
                 byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
                 server.Send(msg);
-
             }
          }
 
